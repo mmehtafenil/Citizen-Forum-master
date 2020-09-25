@@ -1,0 +1,31 @@
+
+{% if msg %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Please Login</title>
+
+</head>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>Login</h3>
+        <hr>
+        <form method = "POST">
+            {% csrf_token %}
+            email :
+            <input type="email" name="email"><br><br>
+            Password:
+            <input type="password" name="password"><br><br>
+            <br>
+            <input type = "submit" class = "btn btn-danger" value="Login">
+        </form>
+       <button> <a  href="{% url 'user:register'  %}">Register</a></button>
+    </div>
+</div>
+
+
